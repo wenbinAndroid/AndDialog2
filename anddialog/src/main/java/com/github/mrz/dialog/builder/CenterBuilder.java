@@ -1,5 +1,6 @@
 package com.github.mrz.dialog.builder;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -32,7 +33,7 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
     }
 
     public interface CenterListener {
-        void onCenterListener(View view, int requestCode);
+        void onCenterListener(View view, DialogFragment dialogFragment, int requestCode);
     }
 
 
