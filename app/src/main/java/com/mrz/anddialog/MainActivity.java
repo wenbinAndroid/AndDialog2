@@ -1,6 +1,7 @@
 package com.mrz.anddialog;
 
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +9,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.mrz.dialog.AndDialog;
-import com.github.mrz.dialog.builder.BottomBuilder;
 import com.github.mrz.dialog.builder.CheckBuilder;
 import com.github.mrz.dialog.builder.SingnleBulder;
+import com.github.mrz.dialog.request.OnDialogListener;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,15 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onBottom(View view) {
-        AndDialog.with(this).bottom().setBottomListener(new BottomBuilder.BottomListener() {
+        AndDialog.with(this).bottom().setBottomListener(new OnDialogListener() {
             @Override
-            public void onBottomListener(View view, android.support.v4.app.DialogFragment
-                    dialogFragment, int requesCode) {
+            public void onDialogListener(View view, DialogFragment dialogFragment, int
+                    requestCode) {
                 RecyclerView rv = view.findViewById(R.id.recycler);
                 rv.setLayoutManager(new LinearLayoutManager(MainActivity.this,
                         LinearLayoutManager.HORIZONTAL, false));
                 rv.setAdapter(new ShareAdapter(SHARE_TEXT));
             }
+
 
 
         }).setLayout(R.layout.dialog_share).build().show

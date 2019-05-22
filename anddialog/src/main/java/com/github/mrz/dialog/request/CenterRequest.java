@@ -8,6 +8,6 @@ import com.github.mrz.dialog.builder.CenterBuilder;
  */
 public interface CenterRequest extends BaseRquest<CenterBuilder> {
 
-    CenterBuilder setCenterListener(CenterBuilder.CenterListener listener);
+    CenterBuilder setDialogListener(OnDialogListener listener);
 
 }

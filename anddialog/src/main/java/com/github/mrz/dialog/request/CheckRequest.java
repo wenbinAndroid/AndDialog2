@@ -12,7 +12,8 @@ public interface CheckRequest extends BaseRquest<CheckBuilder> {
 
     //left
     CheckBuilder setLeftText(int leftIdRes, String text);
-    CheckBuilder setLeftText(int leftIdRes, String text,CheckBuilder.LeftBtnListener listener);
+
+    CheckBuilder setLeftText(int leftIdRes, String text, CheckBuilder.LeftBtnListener listener);
 
     CheckBuilder setLeftText(String text);
 
@@ -25,21 +26,22 @@ public interface CheckRequest extends BaseRquest<CheckBuilder> {
     CheckBuilder setBoldLeftText(boolean state);
 
 
-
     CheckBuilder setLeftTextColor(String color);
 
     CheckBuilder setLeftBackground(int background);
 
 
-
     CheckBuilder setLeftBtnListener(CheckBuilder.LeftBtnListener listener);
+
+    CheckBuilder setLeftBtnListener(int id, CheckBuilder.LeftBtnListener listener);
 
 
     //right
     CheckBuilder setRightText(String text);
 
     CheckBuilder setRightText(int id, String text);
-    CheckBuilder setRightText(int id, String text,CheckBuilder.RightBtnListener listener);
+
+    CheckBuilder setRightText(int id, String text, CheckBuilder.RightBtnListener listener);
 
     CheckBuilder setRightTextId(int rightIdRes);
 
@@ -53,6 +55,8 @@ public interface CheckRequest extends BaseRquest<CheckBuilder> {
     CheckBuilder setRightTexColor(String color);
 
     CheckBuilder setRightBtnListener(CheckBuilder.RightBtnListener listener);
+
+    CheckBuilder setRightBtnListener(int id, CheckBuilder.RightBtnListener listener);
 
     CheckBuilder setRightBackground(int background);
 

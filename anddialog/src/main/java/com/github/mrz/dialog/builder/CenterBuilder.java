@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.github.mrz.dialog.factory.CenterFactory;
 import com.github.mrz.dialog.request.CenterRequest;
+import com.github.mrz.dialog.request.OnDialogListener;
 
 /**
  * @author Mrz
@@ -16,7 +17,7 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
 
 
     //center
-    public CenterBuilder.CenterListener mCenterListener;
+    public OnDialogListener mCenterListener;
 
     private CenterBuilder(AppCompatActivity activity) {
         super(activity);
@@ -33,14 +34,9 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
     }
 
     @Override
-    public CenterBuilder setCenterListener(CenterListener listener) {
+    public CenterBuilder setDialogListener(OnDialogListener listener) {
         this.mCenterListener = listener;
         return this;
-    }
-
-
-    public interface CenterListener {
-        void onCenterListener(View view, DialogFragment dialogFragment, int requestCode);
     }
 
 

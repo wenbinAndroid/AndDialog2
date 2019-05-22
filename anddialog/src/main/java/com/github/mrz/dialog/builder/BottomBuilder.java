@@ -1,11 +1,10 @@
 package com.github.mrz.dialog.builder;
 
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.github.mrz.dialog.factory.BottomFactory;
 import com.github.mrz.dialog.request.BottomRequest;
+import com.github.mrz.dialog.request.OnDialogListener;
 
 /**
  * @author Mrz
@@ -15,7 +14,7 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
         BottomRequest {
 
     //bottom
-    public BottomBuilder.BottomListener mBottomListener;
+    public OnDialogListener mBottomListener;
 
     private BottomBuilder(AppCompatActivity activity) {
         super(activity);
@@ -32,14 +31,10 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
     }
 
     @Override
-    public BottomBuilder setBottomListener(BottomListener bottomListener) {
+    public BottomBuilder setBottomListener(OnDialogListener bottomListener) {
         mBottomListener = bottomListener;
         return this;
     }
 
-
-    public interface BottomListener {
-        void onBottomListener(View view, DialogFragment dialogFragment, int requesCode);
-    }
 
 }

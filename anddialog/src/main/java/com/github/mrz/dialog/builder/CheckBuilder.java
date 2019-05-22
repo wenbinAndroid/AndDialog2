@@ -128,6 +128,13 @@ public class CheckBuilder extends BaseBuilder<CheckBuilder, CheckFactory> implem
     }
 
     @Override
+    public CheckBuilder setLeftBtnListener(int id, LeftBtnListener listener) {
+        this.leftIdRes = id;
+        this.mLeftBtnListener = listener;
+        return this;
+    }
+
+    @Override
     public CheckBuilder setRightText(String text) {
         this.rightText = text;
         return this;
@@ -181,6 +188,13 @@ public class CheckBuilder extends BaseBuilder<CheckBuilder, CheckFactory> implem
 
     @Override
     public CheckBuilder setRightBtnListener(RightBtnListener listener) {
+        this.mRightBtnListener = listener;
+        return this;
+    }
+
+    @Override
+    public CheckBuilder setRightBtnListener(int id, RightBtnListener listener) {
+        this.rightIdRes = id;
         this.mRightBtnListener = listener;
         return this;
     }

@@ -39,7 +39,7 @@ public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
     @Override
     protected void init() {
         if (mBuilder.mCenterListener != null) {
-            mBuilder.mCenterListener.onCenterListener(mView, this, mBuilder.requestCode);
+            mBuilder.mCenterListener.onDialogListener(mView, this, mBuilder.requestCode);
         }
     }
 }

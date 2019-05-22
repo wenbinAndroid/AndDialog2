@@ -37,7 +37,7 @@ public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
     @Override
     protected void init() {
         if (mBuilder.mBottomListener != null) {
-            mBuilder.mBottomListener.onBottomListener(mView, this, mBuilder.requestCode);
+            mBuilder.mBottomListener.onDialogListener(mView, this, mBuilder.requestCode);
         }
     }
 }
