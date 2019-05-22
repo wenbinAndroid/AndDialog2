@@ -6,7 +6,8 @@ import com.github.mrz.dialog.builder.CenterBuilder;
  * @author Mrz
  * @date 2019/5/22 10:07
  */
-public interface CenterRequest {
+public interface CenterRequest extends BaseRquest<CenterBuilder> {
 
-    void setCenterListener(CenterBuilder.CenterListener listener);
+    CenterBuilder setCenterListener(CenterBuilder.CenterListener listener);
+
 }

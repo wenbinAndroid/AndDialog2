@@ -31,7 +31,7 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
         return new BottomBuilder(activity);
     }
 
-
+    @Override
     public BottomBuilder setBottomListener(BottomListener bottomListener) {
         mBottomListener = bottomListener;
         return this;
