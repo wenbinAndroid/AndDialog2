@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 	}
 Step 2. Add the dependency
 	dependencies {
-	implementation 'com.github.wenbinAndroid:AndDialog:v2.0.2'
+	implementation 'com.github.wenbinAndroid:AndDialog2:V1.0.0'
 	}
 ```
 ![photo](https://github.com/wenbinAndroid/AndDialog/blob/master/photo/S80802-16210796.gif)
@@ -25,46 +25,64 @@ Step 2. Add the dependency
 #### 选择对话框
 
 ``` Java
-AndDialog.with(this).check().setTitle(R.id.tv_check_title, "标题").setContent(R.id
-                .tv_check_message, "内容").setLeftText(R.id
-                .btn_check_cancel, "取消", new CheckLeftListener() {
-            @Override
-            public void leftClick(int requestCode) {
+ AndDialog.with(this).check()
+                .setContentText(R.id.tv_check_message, "这里是内容")
+                .setRightText(R.id.btn_check_enter, "确定1")
+                .setLeftText(R.id.btn_check_cancel, "取消1")
+                .setTitleText(R.id.tv_check_title, "这里是标题")
+                .setLeftTextColor("#dddddd")
+                .setRightTexColor("#dddddd")
+                .setTitleColor("#dddddd")
+                .setCanceledOnTouchOutside(true)
+                .setCancelable(true)
+                .setBoldTitleText(false)
+                .setBoldContentText(false)
+                .setBoldLeftText(false)
+                .setBoldRightText(false)
+                .setContentTextColor("#dddddd")
+                .setLeftBtnListener(new CheckBuilder.LeftBtnListener() {
+                    @Override
+                    public void onLeftBtnClick(int requestCode) {
+                        Toast.makeText(MainActivity.this, "left", Toast.LENGTH_SHORT).show();
+                    }
+                }).setRightBtnListener(new CheckBuilder.RightBtnListener() {
 
-            }
-        }).setRightText(R.id.btn_check_enter, "确定", new CheckRightListener() {
             @Override
-            public void rightClick(int requestCode) {
-
+            public void onRightBtnClick(int requestCode) {
+                Toast.makeText(MainActivity.this, "right", Toast.LENGTH_SHORT).show();
             }
-        }).setLayout(R.layout.dialog_common_check).setCancelable(false).setCanceledOnTouchOutside
-                (true).show();
+        }).setLayout(R.layout.dialog_common_check).build().show(getSupportFragmentManager());
 ```
 
 #### 底部弹框
 ```Java
-AndDialog.with(this).bottom().setBottomListener(this).requestCode(1).setLayout(R.layout
-                .dialog_share)
-                .show();
-
-实现这个方法,自己加入需要显示的视图
-    @Override
-    public void onDialogAction(View view, Bundle bundle, int code, final DialogFragment
-            dialogFragment) {
-
-    }
+AndDialog.with(this).bottom().setBottomListener(new BottomBuilder.BottomListener() {
+            @Override
+            public void onBottomListener(View view, int requesCode) {
+                RecyclerView rv = view.findViewById(R.id.recycler);
+                rv.setLayoutManager(new LinearLayoutManager(MainActivity.this,
+                        LinearLayoutManager.HORIZONTAL, false));
+                rv.setAdapter(new ShareAdapter(SHARE_TEXT));
+            }
+        }).setLayout(R.layout.dialog_share).build().show
+                (getSupportFragmentManager());
 ```
  
 #### 错误提示框
 ``` java
- AndDialog.with(this).tips().setTitle(R.id.tv_tips_title, "标题").setTipsContent(R.id
-                .tv_tips_message, "内容信息").setTipsBtnText(R.id
-                .btn_tips_enter, "知道了", new TipsListener() {
-            @Override
-            public void onTipsClick(int requestCode) {
+  AndDialog.with(this).single().setLayout(R.layout.dialog_common_tips).setTitleText(R.id
+                .tv_tips_message, "这里是标题")
+                .setBoldContentText(false)
+                .setBoldSingleText(false)
+                .setBoldTitleText(false)
+                .setContentText(R.id.tv_tips_message, "错误了")
+                .setSingleText(R.id.btn_tips_enter, "知道了")
+                .setSingleLisener(new SingnleBulder.SingleListener() {
+                    @Override
+                    public void onSingleBtnClick(int requestCode) {
 
-            }
-        }).setLayout(R.layout.dialog_common_tips).show();
+                    }
+                }).build().show(getSupportFragmentManager());
    
 ```
 
