@@ -71,13 +71,15 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     public void onStart() {
         super.onStart();
         if (!isInit) {
-
             setDialogPosition();
             init();
             setBackgroundDimEnabled();
-
             isInit = true;
         }
+    }
+
+    public void refresh() {
+        init();
     }
 
 

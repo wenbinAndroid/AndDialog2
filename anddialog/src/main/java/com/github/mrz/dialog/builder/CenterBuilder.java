@@ -32,6 +32,11 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
         return new CenterBuilder(activity);
     }
 
+    @Override
+    public void setCenterListener(CenterListener listener) {
+        this.mCenterListener = listener;
+    }
+
     public interface CenterListener {
         void onCenterListener(View view, DialogFragment dialogFragment, int requestCode);
     }
