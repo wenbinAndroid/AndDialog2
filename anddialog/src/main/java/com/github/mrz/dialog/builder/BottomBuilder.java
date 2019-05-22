@@ -31,7 +31,7 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
     }
 
     @Override
-    public BottomBuilder setBottomListener(OnDialogListener bottomListener) {
+    public BottomBuilder setDialogListener(OnDialogListener bottomListener) {
         mBottomListener = bottomListener;
         return this;
     }

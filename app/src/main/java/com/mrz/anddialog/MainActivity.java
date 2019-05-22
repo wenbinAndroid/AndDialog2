@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onBottom(View view) {
-        AndDialog.with(this).bottom().setBottomListener(new OnDialogListener() {
+        AndDialog.with(this).bottom().setDialogListener(new OnDialogListener() {
             @Override
             public void onDialogListener(View view, DialogFragment dialogFragment, int
                     requestCode) {

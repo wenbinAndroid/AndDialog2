@@ -7,5 +7,5 @@ import com.github.mrz.dialog.builder.BottomBuilder;
  * @date 2019/5/22 10:06
  */
 public interface BottomRequest extends BaseRquest<BottomBuilder> {
-    BottomBuilder setBottomListener(OnDialogListener bottomListener);
+    BottomBuilder setDialogListener(OnDialogListener bottomListener);
 }
