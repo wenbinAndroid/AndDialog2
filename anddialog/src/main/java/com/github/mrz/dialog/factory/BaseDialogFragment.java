@@ -152,13 +152,20 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
         dismissAllowingStateLoss();
     }
 
-    public void show(FragmentManager transaction) {
+    private void show(FragmentManager transaction) {
         try {
             show(transaction, "");
         } catch (Exception e) {
 
         }
     }
+
+    public void show() {
+        if (mBuilder.mActivity != null) {
+            show(mBuilder.mActivity.getSupportFragmentManager());
+        }
+    }
+
 
     @Override
     public void onDestroy() {
@@ -175,7 +182,7 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     public void onResume() {
         super.onResume();
     }
-    
+
 
     private void reset() {
         mContext = null;

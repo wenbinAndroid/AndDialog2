@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onRightBtnClick(int requestCode) {
                 Toast.makeText(MainActivity.this, "right", Toast.LENGTH_SHORT).show();
             }
-        }).setLayout(R.layout.dialog_common_check).build().show(getSupportFragmentManager());
+        }).setLayout(R.layout.dialog_common_check).build().show();
     }
 
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }).setLayout(R.layout.dialog_share).build().show
-                (getSupportFragmentManager());
+                ();
     }
 
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSingleBtnClick(int requestCode) {
 
                     }
-                }).build().show(getSupportFragmentManager());
+                }).build().show();
     }
 
 }
