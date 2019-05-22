@@ -18,7 +18,7 @@ import com.github.mrz.dialog.builder.SingnleBulder;
  * @date 2019/5/17 17:25
  */
 @SuppressLint("ValidFragment")
-public class SingleFactory extends BaseFactory<SingnleBulder> {
+public class SingleFactory extends BaseDialogFragment<SingnleBulder> {
 
 
     public SingleFactory(SingnleBulder builder) {

@@ -2,6 +2,8 @@ package com.github.mrz.dialog.builder;
 
 import android.support.v7.app.AppCompatActivity;
 
+import com.github.mrz.dialog.request.BaseRquest;
+
 /**
  * @author Mrz
  * @date 2019/5/17 15:24

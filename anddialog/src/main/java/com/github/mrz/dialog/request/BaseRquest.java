@@ -1,4 +1,4 @@
-package com.github.mrz.dialog.builder;
+package com.github.mrz.dialog.request;
 
 /**
  * @author Mrz

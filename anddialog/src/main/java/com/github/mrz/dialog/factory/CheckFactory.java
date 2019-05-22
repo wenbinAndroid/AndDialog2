@@ -19,7 +19,7 @@ import com.github.mrz.dialog.builder.CheckBuilder;
  */
 
 @SuppressLint("ValidFragment")
-public class CheckFactory extends BaseFactory<CheckBuilder> {
+public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
 
 
     public CheckFactory(CheckBuilder builder) {

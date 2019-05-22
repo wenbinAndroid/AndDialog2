@@ -27,16 +27,16 @@ import com.github.mrz.dialog.builder.BaseBuilder;
  * @date 2019/5/17 15:19
  */
 
-public abstract class BaseFactory<V extends BaseBuilder> extends DialogFragment {
+public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFragment {
 
     protected V mBuilder;
     protected Context mContext;
     protected View mView;
-    private static final String TAG = "BaseFactory";
+    private static final String TAG = "BaseDialogFragment";
     protected boolean isInit;
 
 
-    public BaseFactory(V builder) {
+    public BaseDialogFragment(V builder) {
         this.mBuilder = builder;
 
     }
@@ -56,15 +56,22 @@ public abstract class BaseFactory<V extends BaseBuilder> extends DialogFragment 
     @Override
     public void onStop() {
         super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getStyle() > 0) {
+            setStyle(0, getStyle());
+        }
     }
 
     @Override
     public void onStart() {
         super.onStart();
         if (!isInit) {
-            if (getStyle() > 0) {
-                setStyle(0, getStyle());
-            }
+
             setDialogPosition();
             init();
             setBackgroundDimEnabled();
@@ -142,7 +149,6 @@ public abstract class BaseFactory<V extends BaseBuilder> extends DialogFragment 
     @Override
     public void onCancel(DialogInterface dialog) {
         super.onCancel(dialog);
-
         dismissAllowingStateLoss();
     }
 
@@ -160,8 +166,18 @@ public abstract class BaseFactory<V extends BaseBuilder> extends DialogFragment 
         reset();
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+    
+
     private void reset() {
-        Log.d(TAG, "reset: ");
         mContext = null;
         mView = null;
         mBuilder = null;

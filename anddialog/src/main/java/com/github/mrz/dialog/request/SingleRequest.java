@@ -1,6 +1,8 @@
-package com.github.mrz.dialog.builder;
+package com.github.mrz.dialog.request;
 
 import android.support.annotation.IdRes;
+
+import com.github.mrz.dialog.builder.SingnleBulder;
 
 /**
  * @author Mrz

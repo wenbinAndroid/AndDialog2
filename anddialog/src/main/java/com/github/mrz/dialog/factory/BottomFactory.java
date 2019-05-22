@@ -13,7 +13,7 @@ import com.github.mrz.dialog.builder.BottomBuilder;
  * @date 2019/5/17 17:25
  */
 @SuppressLint("ValidFragment")
-public class BottomFactory extends BaseFactory<BottomBuilder> {
+public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
 
 
 

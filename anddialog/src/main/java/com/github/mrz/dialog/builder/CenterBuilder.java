@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.github.mrz.dialog.factory.CenterFactory;
+import com.github.mrz.dialog.request.CenterRequest;
 
 /**
  * @author Mrz
  * @date 2019/5/17 16:43
  */
-public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> {
+public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> implements
+        CenterRequest {
 
 
     //center

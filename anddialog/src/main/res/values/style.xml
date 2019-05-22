@@ -18,9 +18,14 @@
         <item name="android:windowAnimationStyle">@style/BottomDialog.Animation</item>
     </style>
 
-    <style name="BottomDialog.Animation" parent="@android:style/Animation.Dialog">
+    <style name="BottomDialog.Animation" parent="@android:style/Animation.Activity">
         <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+
+     <!--   <item name="android:activityOpenEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_bottom_out</item>-->
     </style>
 
     <style name="CenterDialog" parent="base_dialog_style">
@@ -29,8 +34,12 @@
         <item name="android:windowAnimationStyle">@style/CenterDialog.Animation</item>
     </style>
 
-    <style name="CenterDialog.Animation" parent="@android:style/Animation.Dialog">
-        <item name="android:windowEnterAnimation">@anim/center_animation_in</item>
-        <item name="android:windowExitAnimation">@anim/center_animation_out</item>
+    <style name="CenterDialog.Animation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/center_animation_in</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/center_animation_out</item>
+      <!--  <item name="android:windowEnterAnimation">@anim/center_animation_in</item>
+        <item name="android:windowExitAnimation">@anim/center_animation_out</item>-->
     </style>
 </resources>

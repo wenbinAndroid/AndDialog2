@@ -3,6 +3,7 @@ package com.github.mrz.dialog.builder;
 import android.support.v7.app.AppCompatActivity;
 
 import com.github.mrz.dialog.factory.SingleFactory;
+import com.github.mrz.dialog.request.SingleRequest;
 
 /**
  * @author Mrz

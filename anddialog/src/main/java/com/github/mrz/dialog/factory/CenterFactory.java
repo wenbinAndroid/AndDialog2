@@ -13,7 +13,7 @@ import com.github.mrz.dialog.builder.CenterBuilder;
  * @date 2019/5/17 17:25
  */
 @SuppressLint("ValidFragment")
-public class CenterFactory extends BaseFactory<CenterBuilder> {
+public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
 
 
 
