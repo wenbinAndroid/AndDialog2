@@ -16,7 +16,6 @@ import com.github.mrz.dialog.builder.BottomBuilder;
 public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
 
 
-
     public BottomFactory(BottomBuilder builder) {
         super(builder);
     }
@@ -39,7 +38,7 @@ public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
     protected void init() {
 
         if (mBuilder.mBottomListener != null) {
-            mBuilder.mBottomListener.onBottomListener(mView, mBuilder.requestCode);
+            mBuilder.mBottomListener.onBottomListener(mView, this, mBuilder.requestCode);
         }
     }
 }

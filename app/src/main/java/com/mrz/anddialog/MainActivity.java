@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void onCheck(View view) {
         AndDialog.with(this).check()
                 .setContentText(R.id.tv_check_message, "这里是内容")
@@ -61,12 +60,15 @@ public class MainActivity extends AppCompatActivity {
     public void onBottom(View view) {
         AndDialog.with(this).bottom().setBottomListener(new BottomBuilder.BottomListener() {
             @Override
-            public void onBottomListener(View view, int requesCode) {
+            public void onBottomListener(View view, android.support.v4.app.DialogFragment
+                    dialogFragment, int requesCode) {
                 RecyclerView rv = view.findViewById(R.id.recycler);
                 rv.setLayoutManager(new LinearLayoutManager(MainActivity.this,
                         LinearLayoutManager.HORIZONTAL, false));
                 rv.setAdapter(new ShareAdapter(SHARE_TEXT));
             }
+
+
         }).setLayout(R.layout.dialog_share).build().show
                 (getSupportFragmentManager());
     }

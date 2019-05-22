@@ -16,14 +16,13 @@ import com.github.mrz.dialog.builder.CenterBuilder;
 public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
 
 
-
     public CenterFactory(CenterBuilder builder) {
         super(builder);
     }
 
     @Override
     public int getStyle() {
-        return mBuilder.style==0? R.style.CenterDialog:mBuilder.style;
+        return mBuilder.style == 0 ? R.style.CenterDialog : mBuilder.style;
     }
 
     @Override
@@ -40,7 +39,7 @@ public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
     @Override
     protected void init() {
         if (mBuilder.mCenterListener != null) {
-            mBuilder.mCenterListener.onCenterListener(mView, mBuilder.requestCode);
+            mBuilder.mCenterListener.onCenterListener(mView, this, mBuilder.requestCode);
         }
     }
 }
