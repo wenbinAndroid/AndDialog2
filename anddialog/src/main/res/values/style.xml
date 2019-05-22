@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="base_dialog_style" parent="@android:style/Theme.Panel">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="BottomDialog" parent="base_dialog_style">
+
+        <item name="android:windowAnimationStyle">@style/BottomDialog.Animation</item>
+    </style>
+
+    <style name="BottomDialog.Animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="CenterDialog" parent="base_dialog_style">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@style/CenterDialog.Animation</item>
+    </style>
+
+    <style name="CenterDialog.Animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/center_animation_in</item>
+        <item name="android:windowExitAnimation">@anim/center_animation_out</item>
+    </style>
+</resources>
