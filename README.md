@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 	}
 Step 2. Add the dependency
 	dependencies {
-	implementation 'com.github.wenbinAndroid:AndDialog2:V1.0.5'
+	implementation 'com.github.wenbinAndroid:AndDialog2:V1.0.7'
 	}
 ```
 ![photo](https://github.com/wenbinAndroid/AndDialog/blob/master/photo/S80802-16210796.gif)
