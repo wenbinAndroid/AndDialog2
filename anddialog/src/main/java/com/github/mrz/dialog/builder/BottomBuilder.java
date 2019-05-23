@@ -18,6 +18,7 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
 
     private BottomBuilder(AppCompatActivity activity) {
         super(activity);
+        this.canceledOnTouchOutside = true;
     }
 
     @Override

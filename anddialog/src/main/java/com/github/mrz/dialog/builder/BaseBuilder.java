@@ -10,7 +10,7 @@ import com.github.mrz.dialog.request.BaseRquest;
  */
 public abstract class BaseBuilder<T, V> implements BaseRquest<T> {
     public boolean cancelable = true;
-    public boolean canceledOnTouchOutside = true;
+    public boolean canceledOnTouchOutside = false;
     public float widthAttr = 0.7f;
     public int width;
     public int height;
@@ -34,7 +34,7 @@ public abstract class BaseBuilder<T, V> implements BaseRquest<T> {
 
     @Override
     public T setStyle(int style) {
-        this.style=style;
+        this.style = style;
         return (T) this;
     }
 
