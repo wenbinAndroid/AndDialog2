@@ -2,6 +2,7 @@ package com.github.mrz.dialog.builder;
 
 import android.support.v7.app.AppCompatActivity;
 
+import com.github.mrz.dialog.config.FactoryConfig;
 import com.github.mrz.dialog.request.BaseRquest;
 
 /**
@@ -9,16 +10,16 @@ import com.github.mrz.dialog.request.BaseRquest;
  * @date 2019/5/17 15:24
  */
 public abstract class BaseBuilder<T, V> implements BaseRquest<T> {
-    public boolean cancelable = true;
-    public boolean canceledOnTouchOutside = false;
-    public float widthAttr = 0.7f;
+    public boolean cancelable = FactoryConfig.isDefaultCancelable();
+    public boolean canceledOnTouchOutside = FactoryConfig.isDefaultCanceledOnTouchOutside();
+    public float widthAttr = FactoryConfig.getDefaultWidthAttr();
+    public float backgroundDimAmount = FactoryConfig.getDefaultbackgroundDimAmount();
     public int width;
     public int height;
     public int requestCode;
     public int layout;
     public AppCompatActivity mActivity;
     public boolean keepState;
-    public float backgroundDimAmount = 0.7f;
     public int style;
 
     public BaseBuilder(AppCompatActivity activity) {

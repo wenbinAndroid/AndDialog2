@@ -18,6 +18,7 @@ public class AndDialog {
 
     private AppCompatActivity mActivity;
 
+
     private AndDialog(AppCompatActivity activity) {
         this.mActivity = activity;
     }

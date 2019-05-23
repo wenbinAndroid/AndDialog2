@@ -144,14 +144,12 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
-        dismissAllowingStateLoss();
     }
 
 
     @Override
     public void onCancel(DialogInterface dialog) {
         super.onCancel(dialog);
-        dismissAllowingStateLoss();
     }
 
     private void show(FragmentManager transaction) {
@@ -162,16 +160,18 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
         }
     }
 
-    public void show() {
-        if (mBuilder.mActivity != null) {
+    public BaseDialogFragment show() {
+        if (mBuilder != null && mBuilder.mActivity != null) {
             show(mBuilder.mActivity.getSupportFragmentManager());
         }
+        return this;
     }
 
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
         reset();
     }
 
