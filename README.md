@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 	}
 Step 2. Add the dependency
 	dependencies {
-	implementation 'com.github.wenbinAndroid:AndDialog2:V1.0.0'
+	implementation 'com.github.wenbinAndroid:AndDialog2:V1.0.5'
 	}
 ```
 ![photo](https://github.com/wenbinAndroid/AndDialog/blob/master/photo/S80802-16210796.gif)
@@ -56,9 +56,9 @@ Step 2. Add the dependency
 
 #### 底部弹框
 ```Java
-AndDialog.with(this).bottom().setBottomListener(new BottomBuilder.BottomListener() {
+AndDialog.with(this).bottom().setDialogListener(new OnDialogListener() {
             @Override
-            public void onBottomListener(View view, int requesCode) {
+            public void onDialogListener(View view, DialogFragment dialogFragment, int requestCode) {
                 RecyclerView rv = view.findViewById(R.id.recycler);
                 rv.setLayoutManager(new LinearLayoutManager(MainActivity.this,
                         LinearLayoutManager.HORIZONTAL, false));
