@@ -9,6 +9,7 @@ import com.github.mrz.dialog.request.BaseRquest;
  * @author Mrz
  * @date 2019/5/17 15:24
  */
+
 public abstract class BaseBuilder<T, V> implements BaseRquest<T> {
     public boolean cancelable = FactoryConfig.isDefaultCancelable();
     public boolean canceledOnTouchOutside = FactoryConfig.isDefaultCanceledOnTouchOutside();

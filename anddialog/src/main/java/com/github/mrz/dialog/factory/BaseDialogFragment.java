@@ -41,6 +41,7 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
 
     }
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -61,7 +62,7 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         if (getStyle() > 0) {
             setStyle(0, getStyle());
         }

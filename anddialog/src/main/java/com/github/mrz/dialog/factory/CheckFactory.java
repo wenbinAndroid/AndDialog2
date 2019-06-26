@@ -147,22 +147,28 @@ public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
     private void showRightBtn() {
         try {
             TextView tvRightBtn = mView.findViewById(mBuilder.rightIdRes);
+
             if (!TextUtils.isEmpty(mBuilder.rightText)) {
                 tvRightBtn.setText(mBuilder.rightText);
             }
+
             if (!TextUtils.isEmpty(mBuilder.rightTextColor)) {
                 tvRightBtn.setTextColor(Color.parseColor(mBuilder.rightTextColor));
             }
+
             if (mBuilder.rightTexColorRes != 0) {
                 tvRightBtn.setTextColor(ContextCompat.getColor(mContext, mBuilder
                         .rightTexColorRes));
             }
+
             if (mBuilder.rightTextSize != 0) {
                 tvRightBtn.setTextSize(dp2Px(mBuilder.rightTextSize));
             }
+
             if (mBuilder.rightBtnBackground != 0) {
                 tvRightBtn.setBackgroundResource(mBuilder.rightBtnBackground);
             }
+
             tvRightBtn.getPaint().setFakeBoldText(mBuilder.boldRightText);
             tvRightBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
