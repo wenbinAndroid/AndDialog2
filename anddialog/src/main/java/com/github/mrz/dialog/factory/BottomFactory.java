@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import com.github.mrz.dialog.R;
 import com.github.mrz.dialog.builder.BottomBuilder;
+import com.github.mrz.dialog.config.FactoryConfig;
 
 /**
  * @author Mrz
@@ -22,7 +23,12 @@ public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
 
     @Override
     public int getStyle() {
-        return mBuilder.style == 0 ? R.style.BottomDialog : mBuilder.style;
+        if (mBuilder.style != -1) {
+            return mBuilder.style;
+        } else if (FactoryConfig.getDefaultBottomAniamtionStyle() != -1) {
+            return FactoryConfig.getDefaultBottomAniamtionStyle();
+        }
+        return R.style.BottomDialog;
     }
 
     @Override

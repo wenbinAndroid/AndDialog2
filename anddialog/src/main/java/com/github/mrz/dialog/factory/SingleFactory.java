@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.github.mrz.dialog.R;
 import com.github.mrz.dialog.builder.SingnleBulder;
+import com.github.mrz.dialog.config.FactoryConfig;
 
 /**
  * @author Mrz
@@ -27,7 +28,12 @@ public class SingleFactory extends BaseDialogFragment<SingnleBulder> {
 
     @Override
     public int getStyle() {
-        return mBuilder.style == 0 ? R.style.CenterDialog : mBuilder.style;
+        if (mBuilder.style != -1) {
+            return mBuilder.style;
+        } else if (FactoryConfig.getDefaultCenterAniamtionStyle() != -1) {
+            return FactoryConfig.getDefaultCenterAniamtionStyle();
+        }
+        return R.style.CenterDialog;
     }
 
     @Override

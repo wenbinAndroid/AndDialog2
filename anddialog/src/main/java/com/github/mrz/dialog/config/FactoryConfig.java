@@ -7,7 +7,8 @@ package com.github.mrz.dialog.config;
 public class FactoryConfig {
     private static float defaultWidthAttr = 0.75f;
     private static float defaultbackgroundDimAmount = 0.7f;
-
+    private static int defaultCenterAniamtionStyle=-1;
+    private static int defaultBottomAniamtionStyle=-1;
     public static float getDefaultWidthAttr() {
         return defaultWidthAttr;
     }
@@ -22,6 +23,23 @@ public class FactoryConfig {
 
     public static boolean isDefaultCanceledOnTouchOutside() {
         return defaultCanceledOnTouchOutside;
+    }
+
+    public static void setDefaultCenterAniamtionStyle(int defaultCenterAniamtionStyle) {
+        FactoryConfig.defaultCenterAniamtionStyle = defaultCenterAniamtionStyle;
+    }
+
+    public static void setDefaultBottomAniamtionStyle(int defaultBottomAniamtionStyle) {
+        FactoryConfig.defaultBottomAniamtionStyle = defaultBottomAniamtionStyle;
+    }
+
+    public static int getDefaultCenterAniamtionStyle() {
+
+        return defaultCenterAniamtionStyle;
+    }
+
+    public static int getDefaultBottomAniamtionStyle() {
+        return defaultBottomAniamtionStyle;
     }
 
     private static boolean defaultCancelable = true;

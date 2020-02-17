@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.github.mrz.dialog.R;
 import com.github.mrz.dialog.builder.CheckBuilder;
+import com.github.mrz.dialog.config.FactoryConfig;
 
 /**
  * @author Mrz
@@ -28,7 +29,12 @@ public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
 
     @Override
     public int getStyle() {
-        return mBuilder.style == 0 ? R.style.CenterDialog : mBuilder.style;
+        if (mBuilder.style != -1) {
+            return mBuilder.style;
+        } else if (FactoryConfig.getDefaultCenterAniamtionStyle() != -1) {
+            return FactoryConfig.getDefaultCenterAniamtionStyle();
+        }
+        return R.style.CenterDialog;
     }
 
     @Override
@@ -76,7 +82,7 @@ public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
                 tvTitle.setTextSize(dp2Px(mBuilder.titleTextSize));
             }
 
-                tvTitle.getPaint().setFakeBoldText(mBuilder.titleBoldText);
+            tvTitle.getPaint().setFakeBoldText(mBuilder.titleBoldText);
         } catch (Exception e) {
             System.out.println("titleId  be null");
         }

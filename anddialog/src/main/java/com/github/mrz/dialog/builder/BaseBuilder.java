@@ -21,7 +21,7 @@ public abstract class BaseBuilder<T, V> implements BaseRquest<T> {
     public int layout;
     public AppCompatActivity mActivity;
     public boolean keepState;
-    public int style;
+    public int style=-1;
 
     public BaseBuilder(AppCompatActivity activity) {
         mActivity = activity;
