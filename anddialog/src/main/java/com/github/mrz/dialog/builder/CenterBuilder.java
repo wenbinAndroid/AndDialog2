@@ -26,6 +26,7 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
 
         CenterFactory factory = new CenterFactory();
         factory.setBuilder(this);
+
         return factory;
     }
 

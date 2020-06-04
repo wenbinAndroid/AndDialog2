@@ -36,9 +36,9 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     protected boolean isInit;
 
 
-
     public void setBuilder(V builder) {
         this.mBuilder = builder;
+        Log.d(TAG, "setBuilder: ");
     }
 
 
@@ -63,8 +63,11 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(null);
-        if (getStyle() > 0) {
-            setStyle(0, getStyle());
+        if (mBuilder != null) {
+            if (getStyle() > 0) {
+                setStyle(0, getStyle());
+                Log.d(TAG, "onCreate: ");
+            }
         }
     }
 

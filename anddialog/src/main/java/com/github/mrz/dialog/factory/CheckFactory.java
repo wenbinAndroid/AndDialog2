@@ -1,6 +1,5 @@
 package com.github.mrz.dialog.factory;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -19,7 +18,6 @@ import com.github.mrz.dialog.config.FactoryConfig;
  * @date 2019/5/17 17:25
  */
 
-@SuppressLint("ValidFragment")
 public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
 
 

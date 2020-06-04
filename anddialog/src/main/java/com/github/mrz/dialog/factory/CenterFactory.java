@@ -1,6 +1,5 @@
 package com.github.mrz.dialog.factory;
 
-import android.annotation.SuppressLint;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,7 +12,6 @@ import com.github.mrz.dialog.config.FactoryConfig;
  * @author Mrz
  * @date 2019/5/17 17:25
  */
-@SuppressLint("ValidFragment")
 public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
 
 
