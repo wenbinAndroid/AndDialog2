@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import com.github.mrz.dialog.R;
 import com.github.mrz.dialog.builder.CenterBuilder;
+import com.github.mrz.dialog.config.FactoryConfig;
 
 /**
  * @author Mrz
@@ -19,7 +20,12 @@ public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
 
     @Override
     public int getStyle() {
-        return mBuilder.style == 0 ? R.style.CenterDialog : mBuilder.style;
+        if (mBuilder.style != -1) {
+            return mBuilder.style;
+        } else if (FactoryConfig.getDefaultCenterAniamtionStyle() != -1) {
+            return FactoryConfig.getDefaultCenterAniamtionStyle();
+        }
+        return R.style.CenterDialog;
     }
 
     @Override
