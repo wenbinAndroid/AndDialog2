@@ -16,9 +16,6 @@ import com.github.mrz.dialog.builder.CenterBuilder;
 public class CenterFactory extends BaseDialogFragment<CenterBuilder> {
 
 
-    public CenterFactory(CenterBuilder builder) {
-        super(builder);
-    }
 
     @Override
     public int getStyle() {

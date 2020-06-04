@@ -36,9 +36,9 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     protected boolean isInit;
 
 
-    public BaseDialogFragment(V builder) {
-        this.mBuilder = builder;
 
+    public void setBuilder(V builder) {
+        this.mBuilder = builder;
     }
 
 

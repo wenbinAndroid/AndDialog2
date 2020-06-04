@@ -1,8 +1,6 @@
 package com.github.mrz.dialog.builder;
 
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.github.mrz.dialog.factory.CenterFactory;
 import com.github.mrz.dialog.request.CenterRequest;
@@ -26,7 +24,9 @@ public class CenterBuilder extends BaseBuilder<CenterBuilder, CenterFactory> imp
     @Override
     public CenterFactory build() {
 
-        return new CenterFactory(this);
+        CenterFactory factory = new CenterFactory();
+        factory.setBuilder(this);
+        return factory;
     }
 
     public static CenterBuilder builder(AppCompatActivity activity) {

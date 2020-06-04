@@ -49,7 +49,9 @@ public class SingnleBulder extends BaseBuilder<SingnleBulder, SingleFactory> imp
 
     @Override
     public SingleFactory build() {
-        return new SingleFactory(this);
+        SingleFactory factory = new SingleFactory();
+        factory.setBuilder(this);
+        return factory;
     }
 
     @Override

@@ -12,13 +12,9 @@ import com.github.mrz.dialog.builder.BottomBuilder;
  * @author Mrz
  * @date 2019/5/17 17:25
  */
-@SuppressLint("ValidFragment")
 public class BottomFactory extends BaseDialogFragment<BottomBuilder> {
 
 
-    public BottomFactory(BottomBuilder builder) {
-        super(builder);
-    }
 
     @Override
     public int getStyle() {

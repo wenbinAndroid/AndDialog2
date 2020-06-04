@@ -21,9 +21,7 @@ import com.github.mrz.dialog.builder.SingnleBulder;
 public class SingleFactory extends BaseDialogFragment<SingnleBulder> {
 
 
-    public SingleFactory(SingnleBulder builder) {
-        super(builder);
-    }
+
 
     @Override
     public int getStyle() {

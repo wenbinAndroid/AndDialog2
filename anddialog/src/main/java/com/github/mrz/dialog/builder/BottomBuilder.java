@@ -24,7 +24,9 @@ public class BottomBuilder extends BaseBuilder<BottomBuilder, BottomFactory> imp
     @Override
     public BottomFactory build() {
 
-        return new BottomFactory(this);
+        BottomFactory factory = new BottomFactory();
+        factory.setBuilder(this);
+        return factory;
     }
 
     public static BottomBuilder builder(AppCompatActivity activity) {

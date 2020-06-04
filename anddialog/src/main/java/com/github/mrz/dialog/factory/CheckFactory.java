@@ -22,9 +22,6 @@ import com.github.mrz.dialog.builder.CheckBuilder;
 public class CheckFactory extends BaseDialogFragment<CheckBuilder> {
 
 
-    public CheckFactory(CheckBuilder builder) {
-        super(builder);
-    }
 
     @Override
     public int getStyle() {

@@ -53,7 +53,9 @@ public class CheckBuilder extends BaseBuilder<CheckBuilder, CheckFactory> implem
     @Override
     public CheckFactory build() {
 
-        return new CheckFactory(this);
+        CheckFactory factory = new CheckFactory();
+        factory.setBuilder(this);
+        return factory;
     }
 
 
