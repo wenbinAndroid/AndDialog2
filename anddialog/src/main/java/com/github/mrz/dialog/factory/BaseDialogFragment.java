@@ -22,6 +22,7 @@ import android.view.WindowManager;
 
 import com.github.mrz.dialog.builder.BaseBuilder;
 
+
 /**
  * @author Mrz
  * @date 2019/5/17 15:19
@@ -74,7 +75,7 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     @Override
     public void onStart() {
         super.onStart();
-        if (!isInit) {
+        if (!isInit && mBuilder != null) {
             setDialogPosition();
             init();
             setBackgroundDimEnabled();
@@ -110,26 +111,29 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setCancelable(mBuilder.cancelable);
-        getDialog().setCanceledOnTouchOutside(mBuilder.canceledOnTouchOutside);
-        Dialog dialog = getDialog();
-        if (dialog != null) {
-            //在5.0以下的版本会出现白色背景边框，若在5.0以下设置则会造成文字部分的背景也变成透明
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
-                //目前只有这两个dialog会出现边框
-                if (dialog instanceof ProgressDialog || dialog instanceof DatePickerDialog) {
-                    getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color
-                            .TRANSPARENT));
+        if (mBuilder != null) {
+            getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setCancelable(mBuilder.cancelable);
+            getDialog().setCanceledOnTouchOutside(mBuilder.canceledOnTouchOutside);
+            Dialog dialog = getDialog();
+            if (dialog != null) {
+                //在5.0以下的版本会出现白色背景边框，若在5.0以下设置则会造成文字部分的背景也变成透明
+                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+                    //目前只有这两个dialog会出现边框
+                    if (dialog instanceof ProgressDialog || dialog instanceof DatePickerDialog) {
+                        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color
+                                .TRANSPARENT));
+                    }
                 }
             }
+            int resLayout = mBuilder.layout;
+            if (resLayout == 0) {
+                throw new IllegalStateException("layout must be not null");
+            }
+            mView = inflater.inflate(resLayout, null);
+            return mView;
         }
-        int resLayout = mBuilder.layout;
-        if (resLayout == 0) {
-            throw new IllegalStateException("layout must be not null");
-        }
-        mView = inflater.inflate(resLayout, null);
-        return mView;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     private void setBackgroundDimEnabled() {
@@ -165,7 +169,7 @@ public abstract class BaseDialogFragment<V extends BaseBuilder> extends DialogFr
     }
 
     public BaseDialogFragment show() {
-        if (mBuilder != null && mBuilder.mActivity != null) {
+        if (mBuilder != null && mBuilder.mActivity != null&&!mBuilder.mActivity.isFinishing()) {
             show(mBuilder.mActivity.getSupportFragmentManager());
         }
         return this;
